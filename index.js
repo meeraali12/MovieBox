@@ -1,0 +1,38 @@
+module.exports = {
+  id: "com.vega.movieboxph",
+  name: "MovieBox PH",
+  version: "1.0.0",
+  icon: "https://moviebox.ph",
+  
+  async getCatalog() {
+    return [
+      {
+        title: "MovieBox PH Featured",
+        items: [
+          {
+            id: "mb-movie-1",
+            title: "Example Movie",
+            poster: "https://moviebox.ph",
+            type: "movie"
+          }
+        ]
+      }
+    ];
+  },
+
+  async getStream(id) {
+    return {
+      streams: [
+        {
+          server: "Primary Server",
+          url: "https://moviebox.ph",
+          quality: "1080p",
+          headers: {
+            "User-Agent": "Mozilla/5.0",
+            "Referer": "https://moviebox.ph"
+          }
+        }
+      ]
+    };
+  }
+};
